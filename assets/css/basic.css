@@ -1,13 +1,14 @@
-/*
+body {
+	line-height: 1.5;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #393939;
+	background-color: #E4E6E9;
+	overflow-x: hidden;
+}
+
 a:focus,
-a:active { text-decoration: none; }
-
-.no-underline { text-decoration: none !important }
-
-.no-hover-underline:hover { text-decoration: none !important }
-
-.bolder { font-weight: bolder; }
-*/
+a:active { text-decoration: none; outline: 0; }
 
 .block { display: block !important; }
 
