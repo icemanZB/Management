@@ -13,6 +13,19 @@
 	background-color: #579EC8;
 }
 
+.top-nav > li.green > a { background-color: #2E8965; }
+
+.top-nav > li.green > a:hover,
+.top-nav > li.green > a:focus {
+	background-color: #2C7659;
+}
+
+.top-nav > li > a > .badge {
+	position: relative;
+	top: -1px;
+	padding: 2px 6px;
+}
+
 /* 由于 bootstarp 中的 .nav>li>a 已经写了  position: relative;display: block; 这里就不重复写 */
 .top-nav > li > a {
 	padding: 0 6px;
@@ -59,6 +72,8 @@
 .top-nav > li.open > a { background-color: #2C5976 !important; }
 
 .top-nav > li.open.light-blue > a { background-color: #579EC8 !important; }
+
+.top-nav > li.open.green > a { background-color: #2C7659 !important; }
 
 /* 重置 dropdown-menu 的层级 */
 .top-nav > li .dropdown-menu { z-index: 1031; }

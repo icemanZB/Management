@@ -1,59 +1,6 @@
 .dialog-login {
 	margin: 3em auto 0;
-	float: none;
 	max-width: 400px;
-}
-
-.panel {
-	border: 1px solid #CCC;
-	background-color: white;
-	border-radius: 3px;
-}
-
-.dialog-login .panel {
-	-webkit-box-shadow: 1px 1px 0 #FFF;
-	-moz-box-shadow: 1px 1px 0 #FFF;
-	box-shadow: 1px 1px 0 #FFF;
-}
-
-.panel .panel-heading {
-	border-bottom: 1px solid #CCC;
-	border-left: none;
-	color: #333;
-	display: block;
-	margin-bottom: 0;
-	text-shadow: none;
-	text-transform: none;
-	font-size: .85em;
-	line-height: 1.5em;
-	background: #EFEFEF;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #EFEFEF), color-stop(1, #FAFAFA));
-	background: -ms-linear-gradient(bottom, #EFEFEF, #FAFAFA);
-	background: -moz-linear-gradient(bottom, #EFEFEF 0%, #FAFAFA 100%);
-	background: -o-linear-gradient(bottom, #EFEFEF, #FAFAFA);
-	filter: progid:dximagetransform.microsoft.gradient(startColorStr="#e3e3e3", EndColorStr="#ffffff");
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#efefef')";
-	box-shadow: inset 0 1px 1px white;
-}
-
-.panel .panel-heading:not(.no-collapse):hover {
-	background: #EFEFEF;
-	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #E2E2E2), color-stop(1, #FAFAFA));
-	background: -ms-linear-gradient(bottom, #E2E2E2, #FAFAFA);
-	background: -moz-linear-gradient(bottom, #E2E2E2 0%, #FAFAFA 100%);
-	background: -o-linear-gradient(bottom, #E2E2E2, #FAFAFA);
-	filter: progid:dximagetransform.microsoft.gradient(startColorStr="#e3e3e3", EndColorStr="#ffffff");
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa',EndColorStr='#e2e2e2')";
-}
-
-p.panel-heading {
-	color: #505050;
-	display: block;
-	outline: none;
-}
-
-.panel-body {
-	min-height: .25em;
 }
 
 

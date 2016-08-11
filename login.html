@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>登入页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- basic styles -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="assets/css/basic.css" />
+	<link rel="stylesheet" href="assets/css/input.css" />
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<!-- styles -->
+	<link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+
+<header class="navbar navbar-default">
+	<div class="navbar-header pull-left">
+		<a href="#" class="navbar-brand">
+			<button><i class="icon-home"></i></button>
+			<span>后台管理系统</span>
+		</a>
+	</div>
+</header>
+
+
+<section class="dialog-login">
+	<div class="panel">
+		<p class="panel-heading no-collapse">登入</p>
+		<div class="panel-body">
+			<form class="form-horizontal" id="LoginForm" action="" method="post">
+				<div class="form-group has-success">
+					<label class="col-sm-2 control-label no-padding-right" for="UserName">用户名</label>
+					<div class="col-sm-10">
+						<div class="clearfix input-icon">
+							<input type="text" id="UserName" class="col-xs-10">
+							<i class="icon-user"></i>
+							<span class="help-inline align-middle">
+								<i class="icon-ok"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group has-error">
+					<label class="col-sm-2 control-label no-padding-right" for="Pwd">密码</label>
+					<div class="col-sm-10">
+						<div class="clearfix input-icon">
+							<input type="password" id="Pwd" class="col-xs-10">
+							<i class="icon-lock"></i>
+							<span class="help-inline align-middle">
+								<i class="icon-remove"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label no-padding-right" for="UserName">test</label>
+					<div class="col-sm-10">
+						<div class="clearfix input-icon">
+							<input type="text" id="test" class="col-xs-10">
+							<i class="icon-lock"></i>
+							<span class="help-inline align-middle">
+								<i class="icon-remove"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix">
+					<label class="control-label">
+						<input class="checkbox" type="checkbox" id="id-disable-check">
+						<span class="lbl margin-right-6">记住我</span>
+					</label>
+					<button type="button" class="pull-right btn btn-primary" id="Login">
+						<i class="icon-key"></i>登入
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</section>
+
+<script src="assets/js/jquery-2.0.3.min.js"></script>
+<script>
+	$(function () {
+		var $Login = $("#Login");
+		$Login.click(function () {
+			var $UserName = $("#UserName").val();
+			var $Pwd = $("#Pwd").val();
+			if ($UserName !== "admin" || $Pwd !== "admin") {
+				alert("用户名或者密码不正确");
+				return false;
+			}
+			$("#LoginForm").submit();
+		});
+
+		$("input").keydown(function (ev) {
+			if (ev.which === 13) {
+				$Login.click();
+				return false;
+			}
+		});
+
+	})
+</script>
+</body>
+</html>
