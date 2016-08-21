@@ -90,3 +90,13 @@
 		margin-left: 200px;
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	.hidden-480 {
+		display: none !important;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.breadcrumb > li > a { padding: 0 1px }
+}

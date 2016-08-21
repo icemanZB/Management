@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>left</title>
+	<title>main</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="assets/css/basic.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/basic.css">
+	<link rel="stylesheet" href="assets/css/input.css">
 	<link rel="stylesheet" href="assets/css/reset.css">
 	<link rel="stylesheet" href="assets/css/top.css">
 	<link rel="stylesheet" href="assets/css/left.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<link rel="stylesheet" href="assets/css/media.css">
+
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
 </head>
 
 <body>
-
 
 <header class="navbar navbar-default">
 	<div class="navbar-header pull-left" data-toggle="class:off-screen" data-target=".sidebar">
@@ -85,7 +87,7 @@
 					<span class="user-info"><small class="block">欢迎</small>Iceman</span>
 					<i class="icon-caret-down"></i>
 				</a>
-				<ul class="dropdown-menu dropdown-yellow dropdown-caret caret-right">
+				<ul class="dropdown-menu dropdown-yellow dropdown-caret caret-right user-menu">
 					<li>
 						<a href="#"><i class="icon-cog"></i>设置</a>
 					</li>
@@ -376,21 +378,275 @@
 <div class="app-content">
 	<a href class="off-screen-toggle " data-toggle="class:off-screen" data-target=".sidebar"></a>
 	<div class="app-content-body">
+		<div class="breadcrumbs">
+			<ul class="breadcrumb">
+				<li><i class="icon-home home-icon"></i><a href="#">首页</a></li>
+				<li><a href="#">表格</a></li>
+				<li class="active">简单 &amp; 动态</li>
+				<li class="active">简单</li>
+			</ul>
+		</div>
 		<div class="page-content">
 			<div class="row">
 				<div class="col-xs-12">
-					<!-- 内容 -->
-					<div class="error-container">
-						<div class="well">
-							<h1 class="grey lighter smaller">
-								<span class="blue bigger-125">
-									<i class="icon-sitemap"></i>
-									404
-								</span>
-								Page Not Found
-							</h1>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">筛选条件</div>
+						<div class="panel-body">
+							<form class="form-horizontal" id="LoginForm" action="" method="post">
+								<div class="row">
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="UserName">用户名</label>
+											<div class="col-sm-9">
+												<div class="clearfix input-icon">
+													<input type="text" id="UserName" class="col-xs-10">
+													<i class="icon-user"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group">
+											<label for="DateTime" class="col-sm-3 control-label no-padding-right">日期</label>
+											<div class="col-sm-9">
+												<div class="clearfix input-icon">
+													<input type="text" class="col-xs-9" id="DateTime" readonly>
+													<i class="icon-calendar"></i>
+													<span class="calendar-input" id="DatetimepickerIcon">
+														<i class="icon-calendar"></i>
+													</span>
+												</div>
+											</div>
+											<input type="hidden" id="DateTimePicker" value="" />
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="Domain">网址</label>
+											<div class="col-sm-9">
+												<input type="text" id="Domain" class="col-xs-10">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right" for="Quantity">微调数量</label>
+											<div class="col-sm-9">
+												<div class="spinner">
+													<div class="input-group">
+														<input type="text" class="spinner-input form-control" id="Quantity" maxlength="3">
+														<div class="spinner-buttons input-group-btn btn-group-vertical">
+															<button type="button" class="btn btn-xs btn-info spinner-up">
+																<i class="icon-chevron-up"></i>
+															</button>
+															<button type="button" class="btn btn-xs btn-info spinner-down">
+																<i class="icon-chevron-down"></i>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group">
+											<label class="col-sm-3 control-label no-padding-right">请选择城市</label>
+											<div class="col-sm-9">
+												<div class="col-sm-4 no-padding">
+													<select class="form-control" id="Province">
+													</select>
+												</div>
+												<div class="col-sm-4 no-padding">
+													<select class="form-control" id="City">
+													</select>
+												</div>
+												<div class="col-sm-4 no-padding">
+													<select class="form-control" id="County">
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group clearfix">
+											<div class="control-group">
+												<label class="col-sm-3 control-label no-padding-right">性别</label>
+												<div class="radio">
+													<label>
+														<input name="sex" type="radio" class="radio" checked>
+														<span class="lbl">男</span>
+													</label>
+													<label>
+														<input name="sex" type="radio" class="radio">
+														<span class="lbl">女</span>
+													</label>
+													<label>
+														<input name="sex" type="radio" class="radio" disabled>
+														<span class="lbl">中性</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group clearfix">
+											<div class="control-group">
+												<label class="col-sm-3 control-label no-padding-right">兴趣爱好</label>
+												<div class="checkbox">
+													<label>
+														<input name="Hobby" type="checkbox" class="checkbox">
+														<span class="lbl">体育</span>
+													</label>
+													<label>
+														<input name="Hobby" type="checkbox" class="checkbox">
+														<span class="lbl">看书</span>
+													</label>
+													<label>
+														<input name="Hobby" class="checkbox checkbox-full" type="checkbox">
+														<span class="lbl">看电影</span>
+													</label>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-3 col-md-5 col-sm-12 col-xs-12 no-padding-left">
+										<div class="form-group clearfix">
+											<div class="control-group">
+												<label class="col-sm-3 control-label no-padding-right">打开关闭切换</label>
+												<div class="checkbox">
+													<label>
+														<input name="switch" class="checkbox checkbox-switch" type="checkbox">
+														<span class="lbl"></span>
+													</label>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<!--
+									<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 no-padding-right">
+										<button type="button" class="col-sm-3" id="Search">
+											<i class="icon-search"></i>查询
+										</button>
+									</div>-->
+								</div>
+
+							</form>
 						</div>
 					</div>
+
+					<!-- 内容 -->
+					<table id="SampleTable" class="table table-striped table-bordered table-hover">
+						<thead>
+						<tr>
+							<th class="center">
+								<label>
+									<input type="checkbox" class="checkbox" id="CheckAll">
+									<span class="lbl"></span>
+								</label>
+							</th>
+							<th>网址</th>
+							<th class="sorting">价格</th>
+							<th class="hidden-480">点击量</th>
+							<th>
+								<i class="icon-time bigger-110 hidden-480"></i>
+								更新
+							</th>
+							<th>操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td class="center">
+								<label>
+									<input type="checkbox" class="checkbox">
+									<span class="lbl"></span>
+								</label>
+							</td>
+
+							<td>
+								<a href="#">checkbox.com</a>
+							</td>
+							<td>$45</td>
+							<td class="hidden-480">3,330</td>
+							<td>Feb 12</td>
+							<td>
+								<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+									<button class="btn btn-xs btn-success">
+										<i class="icon-ok bigger-120"></i>
+									</button>
+
+									<button class="btn btn-xs btn-info">
+										<i class="icon-edit bigger-120"></i>
+									</button>
+
+									<button class="btn btn-xs btn-danger">
+										<i class="icon-trash bigger-120"></i>
+									</button>
+								</div>
+
+								<div class="visible-xs visible-sm hidden-md hidden-lg">
+									<div class="position-relative">
+										<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+											<i class="icon-cog icon-only bigger-110"></i>
+										</button>
+
+										<ul class="dropdown-menu dropdown-only-icon dropdown-caret">
+											<li>
+												<a href="#" class="tooltip-info" data-rel="tooltip" title="" data-original-title="View">
+													<span class="blue">
+														<i class="icon-zoom-in bigger-120"></i>
+													</span>
+												</a>
+											</li>
+
+											<li>
+												<a href="#" class="tooltip-success" data-rel="tooltip" title="" data-original-title="Edit">
+													<span class="green">
+														<i class="icon-edit bigger-120"></i>
+													</span>
+												</a>
+											</li>
+
+											<li>
+												<a href="#" class="tooltip-error" data-rel="tooltip" title="" data-original-title="Delete">
+													<span class="red">
+														<i class="icon-trash bigger-120"></i>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+
+					<div class="row">
+						<div class="col-sm-6 pull-left hidden-480">
+							<div class="tables-info">共多少条记录/第几页到第几页</div>
+						</div>
+						<div class="col-sm-6 pull-right">
+							<div class="align-right">
+								<ul class="pagination">
+									<li class="prev disabled"><a href="#"><i class="icon-double-angle-left"></i></a>
+									</li>
+									<li class="active"><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li class="next"><a href="#"><i class="icon-double-angle-right"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -401,6 +657,10 @@
 
 <script src="assets/js/jquery-2.0.3.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.spinner.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="assets/js/jquery.area.js"></script>
 <script>
 
 	(function ($) {
@@ -463,6 +723,39 @@
 			$this.toggleClass("active");
 		});
 
+		$("#CheckAll").click(function () {
+			$("#SampleTable").find("input[type='checkbox']").prop("checked", $(this).prop("checked"));
+		});
+
+		$(".sorting").click(function () {
+			$(this).addClass("sorting_desc");
+		});
+
+		// 日期控件
+		$("#DateTime").datetimepicker({
+			language      : "zh-CN",
+			weekStart     : 1,
+			autoclose     : 1,
+			todayHighlight: true,
+			format        : "yyyy-mm-dd",
+			minView       : 2,
+			forceParse    : 0
+		});
+
+		$("#DatetimepickerIcon").click(function () {
+			$("#DateTime").datetimepicker("show");
+		});
+
+		// spinner 控件
+		$("#Quantity").closest(".spinner").spinner({
+			value: 0,
+			min  : 0,
+			max  : 200,
+			step : 10
+		});
+
+
+		$.jChinaArea();
 	})(jQuery);
 
 </script>

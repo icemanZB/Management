@@ -12,6 +12,14 @@ a:active { text-decoration: none; outline: 0; }
 
 .block { display: block !important; }
 
+.inline { display: inline !important; }
+
+.align-center { text-align: center !important; }
+
+.align-right { text-align: right !important; }
+
+.position-relative { position: relative !important; }
+
 .dark { color: #333 !important; }
 
 .white { color: #FFF !important; }
@@ -91,3 +99,7 @@ a:active { text-decoration: none; outline: 0; }
 .overflow-scroll { overflow: scroll !important; }
 
 .overflow-visible { overflow: visible !important; }
+
+.bigger-110 { font-size: 110%; }
+
+.bigger-120 { font-size: 120% }
